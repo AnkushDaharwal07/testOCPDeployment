@@ -1,17 +1,15 @@
-
 pipeline {
     agent any
 
     environment {
-        GITHUB_REPO = 'https://github.com/yourusername/your-repo.git'
-        DOCKER_IMAGE = 'yourusername/your-app'
+        DOCKER_IMAGE = 'ankush/myApp'  // Replace with your Docker Hub username and desired image name
     }
 
     stages {
         stage('Clone Repository') {
             steps {
                 // Clone the GitHub repository
-                git branch: 'main', url: "${env.GITHUB_REPO}"
+                git branch: 'main', url: 'git@github.com:AnkushDaharwal07/testOCPDeployment.git'
             }
         }
         stage('Build Docker Image') {
